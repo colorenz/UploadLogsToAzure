@@ -30,7 +30,8 @@ logdirSize=`/usr/bin/du -sk /private/var/log | awk '{ print $1 }'`
 # Free space remaining on the boot volume
 freeSpace=`/bin/df / | sed -n 2p | awk '{ print $4 }'`
 
-logFiles="$logFiles $UserHome/Library/Logs/"
+#Logfiles to collect
+logFiles="/private/var/log/ /Library/Logs/ $UserHome/Library/Logs/"
 
 
 
