@@ -8,8 +8,8 @@
 Azure_URL="https://macadminuploadlogs.blob.core.windows.net/uploadlogs/"
 ## The Azure Acesse Token with 
 Token="?sp=acw&st=2022-06-2bjgjgdgjdgdjgtest1Z&spr=https&sv=2021-06-08&sr=c&sig=KAf8WetSgj3LJp4QQ5ojrpNGsN4lXPItQopZZqeQh9w%3D"
-
-
+#Logfiles to collect
+logFiles="/private/var/log/ /Library/Logs/ $UserHome/Library/Logs/"
 ## System Variables
 mySerial=$( system_profiler SPHardwareDataType | grep Serial |  awk '{print $NF}' )
 currentUser=$( stat -f%Su /dev/console )
@@ -30,8 +30,6 @@ logdirSize=`/usr/bin/du -sk /private/var/log | awk '{ print $1 }'`
 # Free space remaining on the boot volume
 freeSpace=`/bin/df / | sed -n 2p | awk '{ print $4 }'`
 
-#Logfiles to collect
-logFiles="/private/var/log/ /Library/Logs/ $UserHome/Library/Logs/"
 
 
 
