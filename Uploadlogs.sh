@@ -8,14 +8,14 @@
 Azure_URL="https://macadminuploadlogs.blob.core.windows.net/uploadlogs/"
 ## The Azure Acesse Token with 
 Token="?sp=acw&st=2022-06-2bjgjgdgjdgdjgtest1Z&spr=https&sv=2021-06-08&sr=c&sig=KAf8WetSgj3LJp4QQ5ojrpNGsN4lXPItQopZZqeQh9w%3D"
-#Logfiles to collect
-logFiles="/private/var/log/ /Library/Logs/ $UserHome/Library/Logs/"
 ## System Variables
 mySerial=$( system_profiler SPHardwareDataType | grep Serial |  awk '{print $NF}' )
 currentUser=$( stat -f%Su /dev/console )
 UserHome=$(dscl . -read /users/$currentUser NFSHomeDirectory | cut -d " " -f 2)
 compHostName=$( scutil --get LocalHostName )
 timeStamp=$( date '+%Y-%m-%d-%H-%M-%S' )
+#Logfiles to collect
+logFiles="/private/var/log/ /Library/Logs/ $UserHome/Library/Logs/"
 # IP Address of ethernet device 0
 ethIP0=`/usr/sbin/ipconfig getifaddr en0`
 # IP Address of ethernet device 1
